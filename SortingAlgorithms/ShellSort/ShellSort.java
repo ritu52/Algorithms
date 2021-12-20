@@ -1,5 +1,7 @@
 package SortingAlgorithms.ShellSort;
 
+import SortingAlgorithms.Helper.HelperMethods;
+
 public class ShellSort {
 
   private int[] arrayToSort;
@@ -16,27 +18,17 @@ public class ShellSort {
         int j = i;
         while(sort.equalsIgnoreCase("asc") &&
             j>=gap && arrayToSort[j-gap] > arrayToSort[j]) {
-          swap(j, j-gap);
+          HelperMethods.swap(j, j-gap,arrayToSort);
           j-=gap;
         }
         while(sort.equalsIgnoreCase("desc") &&
             j>=gap && arrayToSort[j-gap] < arrayToSort[j]) {
-          swap(j, j-gap);
+          HelperMethods.swap(j, j-gap,arrayToSort);
           j-=gap;
         }
       }
       System.out.println(gap+ "-sorted array");
-      showArray();
+      HelperMethods.showArray(arrayToSort);
     }
-  }
-  private void swap(int i, int j) {
-    int temp = arrayToSort[i];
-    arrayToSort[i] = arrayToSort[j];
-    arrayToSort[j] = temp;
-  }
-  public void showArray() {
-    for (int j : arrayToSort) System.out.print(j + " ");
-
-    System.out.println(" ");
   }
 }

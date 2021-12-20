@@ -1,5 +1,7 @@
 package SortingAlgorithms.ShellSort;
 
+import SortingAlgorithms.Helper.HelperMethods;
+
 public class TestingApp {
   /**
    * The implementation of Shell Sort- generalization of Insertion sort.
@@ -23,12 +25,12 @@ public class TestingApp {
     int[] numArr = {3, 0, 1,-3,6,6,7};
     ShellSort shellSort = new ShellSort(numArr);
     System.out.print("Original array input::: ");
-    shellSort.showArray();
+    HelperMethods.showArray(numArr);
     shellSort.sort("asc");
     System.out.print("The sorted array in numerical ascending order::: ");
-    shellSort.showArray();
+    HelperMethods.showArray(numArr);
     shellSort.sort("desc");
     System.out.print("The sorted array in numerical descending order::: ");
-    shellSort.showArray();
+    HelperMethods.showArray(numArr);
   }
 }
